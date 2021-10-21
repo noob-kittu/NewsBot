@@ -14,7 +14,8 @@ API_HASH = os.environ.get("API_HASH", default=None)
 BOT_TOKEN = os.environ.get("BOT_TOKEN", default=None)
 
 
-bot = TelegramClient("NewsBot", APP_ID, API_HASH).start(bot_token=BOT_TOKEN) 
+bot = TelegramClient("NewsBot", APP_ID, API_HASH)
+start = bot.start(bot_token=BOT_TOKEN) 
 
 
 
@@ -45,3 +46,10 @@ async def _(event):
         sed1 = img
         sedm = f"**Title : {titles}** \n{sedlyf} \nDate : {dateis} \nAuthor : {writter} \nReadMore : {readthis}"
         await bot.send_file(event.chat_id, sed1, caption=sedm)
+
+
+
+
+
+print ("Successfully Started")
+start.run_until_disconnected()
