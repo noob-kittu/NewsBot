@@ -3,7 +3,6 @@ from telethon import TelegramClient
 from telethon import events
 import os
 import logging
-import time
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
                     level=logging.WARNING)
@@ -21,7 +20,7 @@ start = bot.start(bot_token=BOT_TOKEN)
 
 @bot.on(events.NewMessage(pattern="^/start"))
 async def _(event):
-    await event.reply('''Hello this is news bot made by Kittu. \n you can get live daily news via this bot. \n just hit command - \n /news \n /news bollywood \n it will send you all news in bot DM. ''')
+    await event.reply('''Hey, i am your newspaper bot people can use me to read daily updated news. \njust hit command - \n /news \n /news bollywood \nit will send you all news in bot DM. \n \n Made by @Autichrist ''')
 
 
 
@@ -29,11 +28,6 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    if event.is_group:
-       await event.reply('Currently This Module Only Works in my [PM](tg://user?id=1624337697)')
-       return
-    else:
-       pass
     infintyvar = event.pattern_match.group(1)
     main_url = f"https://inshortsapi.vercel.app/news?category={infintyvar}"
     stuber = await event.reply(
