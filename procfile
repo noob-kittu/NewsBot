@@ -1,1 +1,1 @@
-NewsBot: python -m bot
+NewsBot: python -m bot.py
