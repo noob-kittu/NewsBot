@@ -9,9 +9,9 @@ logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s'
                     level=logging.WARNING)
 
 # Basics
-APP_ID = os.environ("APP_ID", default=None)
-API_HASH = os.environ("API_HASH", default=None)
-BOT_TOKEN = os.environ("BOT_TOKEN", default=None)
+APP_ID = os.environ.get("APP_ID", default=None)
+API_HASH = os.environ.get("API_HASH", default=None)
+BOT_TOKEN = os.environ.get("BOT_TOKEN", default=None)
 
 
 bot = TelegramClient("NewsBot", APP_ID, API_HASH).start(bot_token=BOT_TOKEN) 
