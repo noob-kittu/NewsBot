@@ -19,6 +19,11 @@ start = bot.start(bot_token=BOT_TOKEN)
 
 
 
+@bot.on(events.NewMessage(pattern="^/start"))
+async def _(event):
+    await event.reply('''Hello this is news bot made by Kittu. \n you can get live daily news via this bot. \n just hit command - \n /news \n /news bollywood \n it will send you all news in bot DM. ''')
+
+
 
 @bot.on(events.NewMessage(pattern="^/news ?(.*)"))
 async def _(event):
